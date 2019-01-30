@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer>
+	<section-def-cats>
+		<def-cat n="prn">
+		   <cat-item tags="prn.*"/>
+		</def-cat>
+		<def-cat n="n">
+		   <cat-item tags="n.*"/>
+		</def-cat>
+	</section-def-cats>
+
+	<section-def-attrs>
+		<def-attr n="nbr">
+		   <attr-item tags="sg"/>
+		   <attr-item tags="pl"/>
+		</def-attr>
+
+		<def-attr n="a_pronoun">
+		   <attr-item tags="prn"/>
+		</def-attr>
+
+		<def-attr n="a_noun">
+		   <attr-item tags="n"/>
+		</def-attr>
+
+	</section-def-attrs>
+
+
+	<section-def-vars>
+		<def-var n="number"/>
+	</section-def-vars>
+
+	<section-rules>
+		<rule>
+		   <pattern>
+			 <pattern-item n="prn"/>
+		   </pattern>
+		   <action>
+			 <out>
+			   <lu>
+				 <clip pos="1" side="tl" part="lem"/>
+				 <clip pos="1" side="tl" part="a_pronoun"/>
+				 <clip pos="1" side="tl" part="nbr"/>
+			   </lu>
+			 </out>
+		   </action>
+		</rule>
+
+		<rule>
+		   <pattern>
+			 <pattern-item n="n"/>
+		   </pattern>
+		   <action>
+			 <out>
+			   <lu>
+				 <clip pos="1" side="tl" part="lem"/>
+				 <clip pos="1" side="tl" part="a_noun"/>
+			   </lu>
+			 </out>
+		   </action>
+		</rule>
+	</section-rules>
+
+</transfer>
